@@ -2,11 +2,17 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/directors');
 
-//router.get('/:id', controller.index);
-router.get('/:n1/:n2', controller.sumar);
-router.post('/:n1/:n2', controller.multiplicacion);
-router.put('/:n1/:n2', controller.division);
-router.patch('/:n1/:n2', controller.potencia);
-router.delete('/:n1/:n2', controller.resta);
+/* GET users listing. */
+router.post('/', controller.create);
+
+router.get('/list/:page?', controller.list);
+
+router.get('/:id', controller.index);
+
+router.put('/:id', controller.replace);
+
+router.patch('/:id', controller.update);
+
+router.delete('/:id', controller.destroy);
 
 module.exports = router;

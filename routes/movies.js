@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/users');
+const controller = require('../controllers/movies');
 
 /* GET users listing. */
 router.post('/', controller.create);
 
-router.get('/list/:page?', controller.list);
+router.get('/', controller.list);
 
 router.get('/:id', controller.index);
 
